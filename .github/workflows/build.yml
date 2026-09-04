@@ -19,12 +19,18 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    - name: Compilar con Maven
-      run: mvn clean package --batch-mode
-      working-directory: ./TpuPerks
+    - name: Buscar pom.xml y Compilar con Maven
+      run: |
+        POM_PATH=$(find . -name "pom.xml" -not -path "*/target/*" | head -n 1)
+        if [ -z "$POM_PATH" ]; then
+          echo "Error: No se encontró ningún archivo pom.xml en el repositorio."
+          exit 1
+        fi
+        echo "Archivo pom.xml encontrado en: $POM_PATH"
+        mvn clean package --batch-mode -f "$POM_PATH"
 
     - name: Guardar JAR generado
       uses: actions/upload-artifact@v4
       with:
-        name: TpuPerks-Plugin
+        name: Plugin-Compilado
         path: '**/target/*.jar'
