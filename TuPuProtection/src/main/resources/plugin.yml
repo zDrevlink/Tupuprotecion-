@@ -1,0 +1,24 @@
+name: TuPuProtection
+version: '1.0.0'
+main: com.tupu.protection.TuPuProtection
+api-version: '1.20'
+author: TuPu Dev Team
+description: Sistema de protecciones por núcleo con asedio mediante TNTs personalizadas.
+
+commands:
+  tupu:
+    description: Comando principal de TuPuProtection.
+    usage: /tupu <prote|give> ...
+    permission: tupu.use
+    permission-message: "§cNo tienes permiso para usar este comando."
+
+permissions:
+  tupu.use:
+    description: Permite usar el comando base /tupu.
+    default: true
+  tupu.admin:
+    description: Permite usar /tupu give y otros comandos administrativos.
+    default: op
+  tupu.admin.bypass:
+    description: Ignora las restricciones de protección (construir/romper/cofres/loot).
+    default: op
