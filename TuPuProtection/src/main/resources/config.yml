@@ -1,0 +1,69 @@
+discord:
+  webhook-url: "https://discord.com/api/webhooks/TU_WEBHOOK_AQUI"
+  alert-cooldown-seconds: 60
+
+protection-tiers:
+  tier1:
+    size-x-z: 25 # 25x25 (Radio 12)
+    max-hp: 1000
+    display-name: "&a&lProtección TuPu - Tier 1"
+  tier2:
+    size-x-z: 50 # 50x50 (Radio 25)
+    max-hp: 3000
+    display-name: "&e&lProtección TuPu - Tier 2"
+  tier3:
+    size-x-z: 100 # 100x100 (Radio 50)
+    max-hp: 7500
+    display-name: "&c&lProtección TuPu - Tier 3"
+  tier4:
+    size-x-z: 200 # 200x200 (Radio 100)
+    max-hp: 15000
+    display-name: "&5&lProtección TuPu - Tier 4"
+
+explosives:
+  heavy-core-buster:
+    damage: 1000
+    display-name: "&c&lTNT Destructor Pesado"
+  light-core-buster:
+    damage: 250
+    display-name: "&e&lTNT Destructor Ligero"
+  wall-breaker:
+    max-blocks-to-destroy: 4
+    display-name: "&6&lTNT Perforadora de Paredes"
+  radar:
+    reveal-duration-seconds: 15
+    display-name: "&b&lTNT Radar de Núcleos"
+
+recipes:
+  tier1-core:
+    shape:
+      - "DDD"
+      - "DRD"
+      - "DDD"
+    ingredients:
+      D: "DIAMOND"
+      R: "REDSTONE_BLOCK"
+  tier2-core:
+    shape:
+      - "EEE"
+      - "ECE"
+      - "EEE"
+    ingredients:
+      E: "EMERALD"
+      C: "tier1-core" # requiere el núcleo Tier 1 como ingrediente central
+  tier3-core:
+    shape:
+      - "OOO"
+      - "OCO"
+      - "OOO"
+    ingredients:
+      O: "OBSIDIAN"
+      C: "tier2-core"
+  tier4-core:
+    shape:
+      - "NNN"
+      - "NCN"
+      - "NNN"
+    ingredients:
+      N: "NETHERITE_INGOT"
+      C: "tier3-core"
